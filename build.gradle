@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.springframework.boot' version '2.1.6.RELEASE'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 8
+targetCompatibility = 8
+
+dependencies {
+    compileOnly 'org.projectlombok:lombok:1.18.8'
+    annotationProcessor 'org.projectlombok:lombok:1.18.8'
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    // Use JUnit test framework
+    testCompileOnly 'org.projectlombok:lombok:1.18.8'
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'com.h2database:h2'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.1.6.RELEASE'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.8'
+}
+
+mainClassName = 'ua.oleksandrbuhaiov.App'
+
+bootRun {
+    environment 'HELLO_MESSAGE', 'Hello from build.gradle!'
+    environment 'NUMBER_URL', 'noop'
+}
