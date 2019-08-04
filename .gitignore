@@ -43,13 +43,14 @@
 cmake-build-*/
 
 # Mongo Explorer plugin
-.idea/**/mongoSettings.xml
+.idea/*
 
 # File-based project format
 *.iws
 
 # IntelliJ
 out/
+*.iml
 
 # mpeltonen/sbt-idea plugin
 .idea_modules/
