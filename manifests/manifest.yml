@@ -1,0 +1,16 @@
+---
+applications:
+  - name: pcf-test
+    memory: 768M
+    instances: 1
+    buildpacks:
+      - java_buildpack
+    routes:
+      - route: pcf-test-buhaiovos.cfapps.io
+    services:
+      - mysql-db
+    path: '../build/libs/pcf-test.jar'
+    env:
+      JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
+      HELLO_MESSAGE: 'Hello from PCF'
+      NUMBER_URL: 'http://random-num-buhaiovos.cfapps.io/random-number'
